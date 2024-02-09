@@ -13,7 +13,7 @@ public class SpringCloudConfig {
         return builder.routes()
                 .route(r -> r.path("/patient/**")
                         .filters(f -> f.stripPrefix(1))
-                        .uri("http://localhost:8000/"))
+                        .uri("http://host.docker.internal:8000/"))
                 .build();
     }
 }
