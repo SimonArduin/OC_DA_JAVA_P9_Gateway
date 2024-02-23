@@ -19,3 +19,6 @@ spring:
             - Path=/note/**
           filters:
             - StripPrefix=1
+  main:
+    allow-bean-definition-overriding:
+      TRUE
