@@ -40,7 +40,10 @@ public class SecurityConfig {
                         .anyExchange().denyAll()
                 )
                 .httpBasic(withDefaults())
-                .formLogin(withDefaults());
+                .formLogin(withDefaults())
+                .cors(withDefaults()).authorizeExchange(withDefaults())
+                .csrf( csrf -> csrf.disable())
+        ;
         return http.build();
     }
 }
