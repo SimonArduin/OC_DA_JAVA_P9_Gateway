@@ -28,15 +28,22 @@ public class SecurityConfig {
                 .password("password")
                 .roles("PLANNER", "PRACTITIONER")
                 .build();
-        return new MapReactiveUserDetailsService (planner, practitioner);
+        UserDetails predictionMicroservice = users
+                .username("predictionMicroservice")
+                .password("password")
+                .roles("READ")
+                .build();
+        return new MapReactiveUserDetailsService (planner, practitioner, predictionMicroservice);
     }
 
     @Bean
     public SecurityWebFilterChain securityFilterChain (ServerHttpSecurity http) throws Exception {
         http
                 .authorizeExchange((authorize) -> authorize
+                        .pathMatchers("/patient/get/**").hasAnyRole("READ","PLANNER")
+                        .pathMatchers("/note/getbypatientid/**").hasAnyRole("READ","PRACTITIONER")
                         .pathMatchers("/patient/**").hasRole("PLANNER")
-                        .pathMatchers("/note/**").hasRole("PRACTITIONER")
+                        .pathMatchers("/note/**","/prediction/**").hasRole("PRACTITIONER")
                         .anyExchange().denyAll()
                 )
                 .httpBasic(withDefaults())
