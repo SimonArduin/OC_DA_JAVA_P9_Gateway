@@ -19,6 +19,14 @@ spring:
             - Path=/note/**
           filters:
             - StripPrefix=1
+
+        - id: prediction-route
+          uri: http://localhost:8002/
+          predicates:
+            - Path=/prediction/**
+          filters:
+            - StripPrefix=1
+
   main:
     allow-bean-definition-overriding:
       TRUE
