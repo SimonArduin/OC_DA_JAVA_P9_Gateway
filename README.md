@@ -1,13 +1,6 @@
 # OC_DA_JAVA_P9_Gateway
 
-Gateway microservice for medilabo
-<ul>
-  <li><a href="https://github.com/SimonArduin/OC_DA_JAVA_P9_Front">Front microservice</a></li>
-  <li><a href="https://github.com/SimonArduin/OC_DA_JAVA_P9_Gateway">Gateway microservice</a></li>
-  <li><a href="https://github.com/SimonArduin/OC_DA_JAVA_P9_Patient">Patient microservice</a></li>
-  <li><a href="https://github.com/SimonArduin/OC_DA_JAVA_P9_Prediction">Prediction microservice</a></li>
-  <li><a href="https://github.com/SimonArduin/OC_DA_JAVA_P9_Note">Note microservice</a></li>
-</ul>
+Gateway microservice for [medilabo](https://github.com/SimonArduin/OC_DA_JAVA_P9_Medilabo)
 
 This application receives http requests and reroutes them to the appropriate microservice, if the requests are authorized.
 
