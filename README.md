@@ -34,8 +34,8 @@ Incoming requests are received on port 8010 (specified in [application.yml](gate
     <tr>
       <td>PREDICTIONMICROSERVICE</td>
       <td>Get</td>
-      <td>Get</td>
       <td>None</td>
+      <td>Get</td>
     </tr>
   </tbody>
 </table>
